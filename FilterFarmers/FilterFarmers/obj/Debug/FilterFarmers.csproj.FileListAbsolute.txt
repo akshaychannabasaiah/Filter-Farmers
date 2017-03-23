@@ -1,0 +1,16 @@
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\bin\Debug\FilterFarmers.exe.config
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\obj\Debug\FilterFarmers.exe
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\obj\Debug\FilterFarmers.pdb
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\bin\Debug\FilterFarmers.exe
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\bin\Debug\FilterFarmers.pdb
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\bin\Debug\System.Net.Http.dll
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\bin\Debug\System.Net.Http.xml
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\obj\Debug\FilterFarmers.csprojResolveAssemblyReference.cache
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\obj\Debug\MainWindow.g.cs
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\obj\Debug\App.g.cs
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\obj\Debug\FilterFarmers_MarkupCompile.cache
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\obj\Debug\FilterFarmers_MarkupCompile.lref
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\obj\Debug\MainWindow.baml
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\obj\Debug\FilterFarmers.g.resources
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\obj\Debug\FilterFarmers.Properties.Resources.resources
+C:\Users\AC\Documents\Visual Studio 2015\Projects\FilterFarmers\FilterFarmers\obj\Debug\FilterFarmers.csproj.GenerateResource.Cache

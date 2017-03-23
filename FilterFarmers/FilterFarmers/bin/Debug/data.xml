@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Records>
+  <Farmer>
+    <Contact_information>
+      <FirstName>GR</FirstName>
+      <LastName>Gard</LastName>
+      <ContactNo>+35840 1234 567</ContactNo>
+      <Email>grgard@maatila.com</Email>
+    </Contact_information>
+    <Location>
+      <City>Siuntio</City>
+      <State>Uusimaa</State>
+      <Country>Finland</Country>
+    </Location>
+    <size_of_farm>
+      <Total>600 </Total>
+      <rye>50</rye>
+      <bullbean>50</bullbean>
+      <grass>450</grass>
+    </size_of_farm>
+    <Animals>
+      <Agnus>150</Agnus>
+    </Animals>
+    <Machinery>
+      <Tractor> Valtra N154</Tractor>
+      <Tractor> Valtra T174</Tractor>
+      <Harvester> Claas TUCANO 320 </Harvester>
+    </Machinery>
+    <Project />
+    <Facility>
+      <Cowhouse />
+      <Silo />
+    </Facility>
+  </Farmer>
+  <Farmer>
+    <Contact_information>
+      <FirstName>Aaro</FirstName>
+      <LastName>Takoja</LastName>
+      <ContactNo>+35850 1234 567</ContactNo>
+      <Email>takojad@maatila.com</Email>
+    </Contact_information>
+    <Location>
+      <City>Hameenlinna</City>
+      <State>Hame</State>
+      <Country>Finland</Country>
+    </Location>
+    <size_of_farm>
+      <Total>130</Total>
+      <oat>20</oat>
+      <Wheat>30</Wheat>
+      <barley>20</barley>
+      <Mustard />
+      <Rapeseed />
+      <sugarbeet />
+      <grass>15</grass>
+    </size_of_farm>
+    <Animals />
+    <Machinery>
+      <Tractor> Valtra_N111E</Tractor>
+    </Machinery>
+    <Project />
+    <Facility>
+      <Dryer />
+    </Facility>
+  </Farmer>
+  <Farmer>
+    <Contact_information>
+      <FirstName>Hubert</FirstName>
+      <LastName>Braun</LastName>
+      <ContactNo>+49 1234 567</ContactNo>
+      <Email>braun@farmer.com</Email>
+    </Contact_information>
+    <Location>
+      <Country>Germany</Country>
+    </Location>
+    <size_of_farm>
+      <Total>140</Total>
+    </size_of_farm>
+    <Animals />
+    <Machinery />
+    <Project />
+    <Facility />
+  </Farmer>
+  <Farmer>
+    <Contact_information>
+      <FirstName>Jochen</FirstName>
+      <LastName>Frank</LastName>
+      <ContactNo>+49 1234 567</ContactNo>
+      <Email>frankd@farmer.com</Email>
+    </Contact_information>
+    <Location>
+      <Country>Germany</Country>
+    </Location>
+    <size_of_farm>
+      <Total>550</Total>
+      <Wheat />
+      <maixe />
+      <rape />
+      <potatoes />
+      <sugarbeet />
+    </size_of_farm>
+    <Animals />
+    <Machinery />
+    <Project />
+    <Facility>
+      <Dryer />
+    </Facility>
+  </Farmer>
+  <Farmer>
+    <Contact_information>
+      <FirstName>Markku</FirstName>
+      <LastName>Takamaa</LastName>
+      <ContactNo>+35850 1234 567</ContactNo>
+      <Email>markku@marjatila.com</Email>
+    </Contact_information>
+    <Location>
+      <City>Nurmijarvi</City>
+      <State>Uusimaa</State>
+      <Country>Finland</Country>
+    </Location>
+    <size_of_farm>
+      <Total>118</Total>
+      <Grain>17</Grain>
+      <Strawberries>22</Strawberries>
+      <Cranberries>11</Cranberries>
+      <Fallow />
+      <Peas>18</Peas>
+      <Blackcurrent />
+      <grass>31</grass>
+    </size_of_farm>
+    <Animals />
+    <Machinery>
+      <Sprayer />
+      <ATV />
+    </Machinery>
+    <Project />
+    <Facility>
+      <Dryer />
+    </Facility>
+  </Farmer>
+  <Farmer>
+    <Contact_information>
+      <FirstName>Herbert</FirstName>
+      <LastName>Durst</LastName>
+      <ContactNo>+49 1234 567</ContactNo>
+      <Email>herber@farmer.com</Email>
+    </Contact_information>
+    <Location>
+      <City>Heidelshmein</City>
+      <Country>Germany</Country>
+    </Location>
+    <size_of_farm>
+      <Total>115</Total>
+    </size_of_farm>
+    <Animals />
+    <Machinery />
+    <Project />
+    <Facility>
+      <Dryer />
+    </Facility>
+  </Farmer>
+  <Farmer>
+    <Contact_information>
+      <FirstName>Jussi</FirstName>
+      <LastName>Nakyvainen</LastName>
+      <ContactNo>+35850 1234 567</ContactNo>
+      <Email>jussid@maatila.com</Email>
+    </Contact_information>
+    <Location>
+      <City>Kirkkonummi</City>
+      <State>Uusimaa</State>
+      <Country>Finland</Country>
+    </Location>
+    <size_of_farm>
+      <Total>550</Total>
+      <Wheat>100</Wheat>
+      <barley>100</barley>
+      <grass>100</grass>
+      <ryerapeseed />
+      <horsepean />
+    </size_of_farm>
+    <Animals>
+      <Hereford>130</Hereford>
+    </Animals>
+    <Machinery>
+      <Tractor> Valtra T191</Tractor>
+      <Tractor> John Deere 6930 STD</Tractor>
+      <Harvester> Deutch-Fahr 5660 </Harvester>
+    </Machinery>
+    <Project />
+    <Facility>
+      <Dryer />
+      <Cowhouse />
+    </Facility>
+  </Farmer>
+  <Farmer>
+    <Contact_information>
+      <FirstName>Mikko</FirstName>
+      <LastName>Rasanen</LastName>
+      <ContactNo>+35850 1234 567</ContactNo>
+      <Email>mikko@maatila.com</Email>
+    </Contact_information>
+    <Location>
+      <City>Hyvinkaa</City>
+      <State>Uusimaa</State>
+      <Country>Finland</Country>
+    </Location>
+    <size_of_farm>
+      <Total>500</Total>
+      <Grain>280</Grain>
+      <grass>180</grass>
+      <Wildgrass />
+    </size_of_farm>
+    <Animals>
+      <Dairycattle>180</Dairycattle>
+      <Hieho>140</Hieho>
+    </Animals>
+    <Machinery>
+      <Tractor> Valtra 800</Tractor>
+      <Tractor> John Deere 5620</Tractor>
+    </Machinery>
+    <Project />
+    <Newcowhouse />
+    <Facility>
+      <Dryer />
+      <Cowhouse />
+    </Facility>
+  </Farmer>
+  <Farmer>
+    <Contact_information>
+      <FirstName>Markus</FirstName>
+      <LastName>Grimm</LastName>
+      <ContactNo>+49 1234 567</ContactNo>
+      <Email>markus@farmer.com</Email>
+    </Contact_information>
+    <Location>
+      <City>Havelse</City>
+      <Country>Germany</Country>
+    </Location>
+    <size_of_farm>
+      <Total>500</Total>
+      <grass>180</grass>
+      <grain>280</grain>
+      <canola />
+      <sugarbeets />
+      <potatoes />
+    </size_of_farm>
+    <Animals />
+    <Machinery />
+    <Project />
+    <Facility>
+      <Dryer />
+    </Facility>
+  </Farmer>
+  <Farmer>
+    <Contact_information>
+      <FirstName>Ari</FirstName>
+      <LastName>Peipponen</LastName>
+      <ContactNo>+35850 1234 567</ContactNo>
+      <Email>ari@maatila.com</Email>
+    </Contact_information>
+    <Location>
+      <City>Espoo</City>
+      <State>Uusimaa</State>
+      <Country>Finland</Country>
+    </Location>
+    <size_of_farm>
+      <Total>20</Total>
+      <Wheat>20</Wheat>
+    </size_of_farm>
+    <Animals />
+    <Machinery>
+      <Tractor> Massey Ferguson 575</Tractor>
+    </Machinery>
+    <Project />
+    <Facility />
+  </Farmer>
+  <Farmer>
+    <Contact_information>
+      <FirstName>Sirkka</FirstName>
+      <LastName>Savinainen</LastName>
+      <ContactNo>+35850 1234 567</ContactNo>
+      <Email>sirkka@maatila.com</Email>
+    </Contact_information>
+    <Location>
+      <City>Vantaa</City>
+      <State>Uusimaa</State>
+      <Country>Finland</Country>
+    </Location>
+    <size_of_farm>
+      <Total>40</Total>
+      <Wheat>20</Wheat>
+      <oat>20</oat>
+    </size_of_farm>
+    <Animals />
+    <Machinery>
+      <Tractor> Massey Ferguson 399</Tractor>
+    </Machinery>
+    <Project />
+    <Facility />
+  </Farmer>
+</Records>

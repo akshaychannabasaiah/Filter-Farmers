@@ -1,0 +1,415 @@
+﻿<Window x:Name="window" x:Class="FilterFarmers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+        xmlns:local="clr-namespace:FilterFarmers"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="480" Width="525" Closed="window_Closed">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
+    <Grid>
+        <ScrollViewer x:Name="scrollFilterView" Visibility="Collapsed" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid x:Name="gridFIlterView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="btnRefresh" Content="Refresh" Click="btnRefresh_Click" Margin="10,2"/>
+                <Button Grid.ColumnSpan="3" x:Name="btnProfile" Content="Profile" HorizontalAlignment="Right" Width="75" Click="btnProfile_Click" Margin="0,2,10,2"/>
+                <!--<Popup Margin="10,10,0,13" Name="Popup1" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True"
+ VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=window, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=grid, Mode=OneWay}" IsOpen="False" Placement="Center" Opacity="0.75">
+                <Grid Background="AliceBlue" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="270"/>
+                        <ColumnDefinition Width="130"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="First Name" Margin="120,20,5,5" />
+                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtFName" Margin="5,20,5,5" />
+                    <TextBlock Grid.Row="1" Text="Last Name" Margin="120,5,5,5" />
+                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="txtLName" Margin="5,5,5,5"/>
+                    <TextBlock Grid.Row="2" Text="Contact Number" Margin="120,5,5,5" />
+                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtPhone" Margin="5,5,5,5"/>
+                    <TextBlock Grid.Row="3" Text="Emai ID" Margin="120,5,5,5" />
+                    <TextBox Grid.Column="1" Grid.Row="3" x:Name="txtEmail" Margin="5,5,5,5"/>
+                    <TextBlock Grid.Row="4" Text="City" Margin="120,5,5,5" />
+                    <TextBox Grid.Column="1" Grid.Row="4" x:Name="txtCity" Margin="5,5,5,5"/>
+                    <TextBlock Grid.Row="5" Text="Province/State" Margin="120,5,5,5" />
+                    <TextBox Grid.Column="1" Grid.Row="5" x:Name="txtState" Margin="5,5,5,5"/>
+                    <TextBlock Grid.Row="6" Text="Country" Margin="120,5,5,5" />
+                    <TextBox Grid.Column="1" Grid.Row="6" x:Name="txtCountry" Margin="5,5,5,5" Text="Finland"/>
+                    <TextBlock Grid.Row="7" Text="Total Farm Size(ha)" Margin="120,5,5,5" />
+                    <TextBox Grid.Column="1" Grid.Row="7" x:Name="txtFarmSize" Margin="5,5,5,5"/>
+                    <TextBlock Grid.Row="8" Text="Grains(Enter comma separated)" Margin="120,5,5,5" />
+                    <TextBox Text="Wheat,potato" Grid.Column="1" Grid.Row="8" x:Name="txtGrains" Margin="5,5,5,5"/>
+                    <TextBlock Grid.Row="9" Text="Animals(Enter comma separated)" Margin="120,5,5,5" />
+                    <TextBox Text="Agnus,Hereford" Grid.Column="1" Grid.Row="9" x:Name="txtAnimals" Margin="5,5,5,5"/>
+                    <TextBlock Grid.Row="10" Text="Machinery(Enter comma separated)" Margin="120,5,5,5" />
+                    <TextBox Text="Valtra 800,John Deere 5620" Grid.Column="1" Grid.Row="10" x:Name="txtMachinery" Margin="5,5,5,5"/>
+                    <TextBlock Grid.Row="11" Text="Facility(Enter comma separated)" Margin="120,5,5,5" />
+                    <TextBox Text="Cow House,Dryer" Grid.Column="1" Grid.Row="11" x:Name="txtFacility" Margin="5,5,5,5"/>
+                    <TextBlock Grid.Row="12" Text="Project" Margin="120,5,5,5" />
+                    <TextBox Grid.Column="1" Grid.Row="12" x:Name="txtProject" Margin="5,5,5,5"/>
+
+                    <Button x:Name="btnCancel" Grid.Row="13" Content="Cancel" Margin="150,20,5,5" Click="bbtnCancel_Click"/>
+                    <Button x:Name="btnSubmit" Grid.Column="1" Grid.Row="13" Content="Submit" Margin="5,20,5,5" Click="btnSubmit_Click"/>
+
+                </Grid>
+            </Popup>-->
+                <Border Grid.Row="1" Margin="10" BorderBrush="Black" BorderThickness="1">
+                    <StackPanel Grid.Row="1" Margin="5,0" Width="100" Orientation="Vertical" >
+                        <TextBlock Margin="0,3,0,5">
+                Filters
+                        </TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>
+                Machinery
+                            </TextBlock>
+                            <Image Margin="10,0,0,0" Height="20" Width="20" Stretch="Fill" Source="Images/Machinery_Y.png"/>
+                        </StackPanel>
+                        <ComboBox x:Name="cmbMachinery" SelectedIndex="0" SelectionChanged="cmbFilter_SelectionChanged" Margin="0,3">
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>
+                Location
+                            </TextBlock>
+                            <Image Margin="10,0,0,0" Height="20" Width="20" Stretch="Fill" Source="Images/Location_Y.png"/>
+                        </StackPanel>
+                        <ComboBox x:Name="cmbLocation" SelectedIndex="0" SelectionChanged="cmbFilter_SelectionChanged" Margin="0,3">
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>
+                Grain
+                            </TextBlock>
+                            <Image Margin="10,0,0,0" Height="20" Width="20" Stretch="Fill" Source="Images/Grain_Y.png"/>
+                        </StackPanel>
+                        <ComboBox x:Name="cmbGrain" SelectedIndex="0" SelectionChanged="cmbFilter_SelectionChanged" Margin="0,3">
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>
+                Animals
+                            </TextBlock>
+                            <Image Margin="10,0,0,0" Height="20" Width="20" Stretch="Fill" Source="Images/Animals_Y.png"/>
+                        </StackPanel>
+                        <ComboBox x:Name="cmbAnimals" SelectedIndex="0" SelectionChanged="cmbFilter_SelectionChanged" Margin="0,3">
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>
+                Facility
+                            </TextBlock>
+                            <Image Margin="10,0,0,0" Height="20" Width="20" Stretch="Fill" Source="Images/Facility_Y.png"/>
+                        </StackPanel>
+                        <ComboBox x:Name="cmbFacility" SelectedIndex="0" SelectionChanged="cmbFilter_SelectionChanged" Margin="0,3">
+                        </ComboBox>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>
+                Project
+                            </TextBlock>
+                            <Image Margin="10,0,0,0" Height="20" Width="20" Stretch="Fill" Source="Images/Project_Y.png"/>
+                        </StackPanel>
+                        <ComboBox x:Name="cmbProject" SelectedIndex="0" SelectionChanged="cmbFilter_SelectionChanged" Margin="0,3">
+                        </ComboBox>
+                    </StackPanel>
+                </Border>
+                <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" Margin="10">
+                    <ListBox x:Name="listBoxFarmerProfile" ItemsSource="{Binding filterList}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image x:Name="imageProfile" Margin="10" Height="50" Width="50" Stretch="Fill" Source="Images/1488401021_profle.png"/>
+                                    <Grid Grid.Column="2" Margin="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="{Binding Path=FullName}"/>
+                                        <TextBlock Grid.Row="1" Text="{Binding Path=Email}"/>
+                                        <TextBlock Grid.Row="2" Text="{Binding Path=Phone}"/>
+                                        <StackPanel Grid.Row="3" Orientation="Horizontal">
+                                            <Image x:Name="imageAnimals" Height="20" Width="20" Source="{Binding AnimalsImage}" Margin="0,0,3,0"></Image>
+                                            <Image x:Name="imageFacility" Height="20" Width="20" Source="{Binding FacilityImage}" Margin="0,0,3,0"></Image>
+                                            <Image x:Name="imageGrain" Height="20" Width="20" Source="{Binding GrainImage}" Margin="0,0,3,0"></Image>
+                                            <Image x:Name="imageLocation" Height="20" Width="20" Source="{Binding LocationImage}" Margin="0,0,3,0" ></Image>
+                                            <Image x:Name="imageMachinery" Height="20" Width="20" Source="{Binding MachineryImage}" Margin="0,0,3,0"></Image>
+                                            <Image x:Name="imageProject" Height="20" Width="20" Source="{Binding ProjectImage}" Margin="0,0,3,0"></Image>
+                                            <Image x:Name="imageSize" Height="20" Width="20" Source="{Binding SizeImage}" ></Image>
+
+                                        </StackPanel>
+                                        <Grid.ColumnDefinitions>
+
+                                        </Grid.ColumnDefinitions>
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+        <ScrollViewer x:Name="scrollCreateProfile" Visibility="Collapsed" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid x:Name="gridCreateProfile" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270"/>
+                    <ColumnDefinition Width="130"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="First Name" Margin="120,20,5,5" />
+                <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtFName" Margin="5,20,5,5" />
+                <TextBlock Grid.Row="1" Text="Last Name" Margin="120,5,5,5" />
+                <TextBox Grid.Column="1" Grid.Row="1" x:Name="txtLName" Margin="5,5,5,5"/>
+                <TextBlock Grid.Row="2" Text="Contact Number" Margin="120,5,5,5" />
+                <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtPhone" Margin="5,5,5,5"/>
+                <TextBlock Grid.Row="3" Text="Emai ID" Margin="120,5,5,5" />
+                <TextBox Grid.Column="1" Grid.Row="3" x:Name="txtEmail" Margin="5,5,5,5"/>
+                <TextBlock Grid.Row="4" Text="City" Margin="120,5,5,5" />
+                <TextBox Grid.Column="1" Grid.Row="4" x:Name="txtCity" Margin="5,5,5,5"/>
+                <TextBlock Grid.Row="5" Text="Province/State" Margin="120,5,5,5" />
+                <TextBox Grid.Column="1" Grid.Row="5" x:Name="txtState" Margin="5,5,5,5"/>
+                <TextBlock Grid.Row="6" Text="Country" Margin="120,5,5,5" />
+                <TextBox Grid.Column="1" Grid.Row="6" x:Name="txtCountry" Margin="5,5,5,5" Text="Finland"/>
+                <TextBlock Grid.Row="7" Text="Total Farm Size(ha)" Margin="120,5,5,5" />
+                <TextBox Grid.Column="1" Grid.Row="7" x:Name="txtFarmSize" Margin="5,5,5,5" Text="0"/>
+                <TextBlock Grid.Row="8" Text="Grains(Enter comma separated)" Margin="120,5,5,5" />
+                <TextBox Text="Wheat,potato" Grid.Column="1" Grid.Row="8" x:Name="txtGrains" Margin="5,5,5,5"/>
+                <TextBlock Grid.Row="9" Text="Animals(Enter comma separated)" Margin="120,5,5,5" />
+                <TextBox Text="Agnus,Hereford" Grid.Column="1" Grid.Row="9" x:Name="txtAnimals" Margin="5,5,5,5"/>
+                <TextBlock Grid.Row="10" Text="Machinery(Enter comma separated)" Margin="120,5,5,5" />
+                <TextBox Text="Valtra 800,John Deere 5620" Grid.Column="1" Grid.Row="10" x:Name="txtMachinery" Margin="5,5,5,5"/>
+                <TextBlock Grid.Row="11" Text="Facility(Enter comma separated)" Margin="120,5,5,5" />
+                <TextBox Text="Cow House,Dryer" Grid.Column="1" Grid.Row="11" x:Name="txtFacility" Margin="5,5,5,5"/>
+                <TextBlock Grid.Row="12" Text="Project" Margin="120,5,5,5" />
+                <TextBox Grid.Column="1" Grid.Row="12" x:Name="txtProject" Margin="5,5,5,5"/>
+
+                <Button x:Name="btnCancel" Grid.Row="13" Content="Cancel" Margin="150,20,5,5" Click="bbtnCancel_Click"/>
+                <Button x:Name="btnSubmit" Grid.Column="1" Grid.Row="13" Content="Submit" Margin="5,20,5,5" Click="btnSubmit_Click"/>
+
+
+            </Grid>
+        </ScrollViewer>
+        <Grid x:Name="gridHomePage" Margin="20" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="What are you searching for?" HorizontalAlignment="Center" FontSize="20"/>
+            <Grid Grid.Row="1" Background="White" Width="400" HorizontalAlignment="Center" VerticalAlignment="Top"  >
+                <!-- overlay with hint text -->
+                <TextBlock Margin="5,2" Padding="5,1" MinWidth="50" Text=""  FontSize="20"
+                   Foreground="LightSteelBlue" Visibility="{Binding ElementName=txtSearchBox, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                <!-- enter term here -->
+                <TextBox Margin="5,2" Padding="5,2" MinWidth="50" FontSize="20" Name="txtSearchBox" Background="Transparent" />
+            </Grid>
+            <!--<TextBox Grid.Row="1" Text="Search" HorizontalAlignment="Center" FontSize="20" Width="400" BorderBrush="Black" BorderThickness="1"/>-->
+            <ScrollViewer Grid.Row="2" x:Name="scrollHomePage" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Margin="2">
+                        <Button x:Name="btnFarmersLikeMe" Background="White" Cursor="Hand" Click="btnFarmersLikeMe_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Width="100" Height="100" Source="Images/profile.jpg"/>
+                                <Label Grid.Row="1" Content="Farmers Like Me" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Button>
+                    </Border>
+                    <Border Grid.Row="0" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="2">
+                        <Button x:Name="btnCropProtection" Background="White" Cursor="Hand" Click="btnCropProtection_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Width="100" Height="100" Source="Images/cropprotection.png"/>
+                                <Label Grid.Row="1" Content="Crop Protection" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Button>
+                    </Border>
+                    <Border Grid.Row="0" Grid.Column="2" BorderThickness="1" BorderBrush="Black" Margin="2">
+                        <Button x:Name="btnSize" Background="White" Cursor="Hand" Click="btnSize_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Width="100" Height="100" Source="Images/size_Y.png"/>
+                                <Label Grid.Row="1" Content="Size" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Button>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Margin="2">
+                        <Button x:Name="btnLocation" Background="White" Cursor="Hand" Click="btnLocation_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Width="100" Height="100" Source="Images/Location_Y.png"/>
+                                <Label Grid.Row="1" Content="Farmers Near Me" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Button>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="2">
+                        <Button x:Name="btnGrain" Background="White" Cursor="Hand" Click="btnGrain_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Width="100" Height="100" Source="Images/Grain_Y.png"/>
+                                <Label Grid.Row="1" Content="Grain" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Button>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="2" BorderThickness="1" BorderBrush="Black" Margin="2">
+                        <Button x:Name="btnMachinery" Background="White" Cursor="Hand" Click="btnMachinery_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Width="100" Height="100" Source="Images/Machinery_Y.png"/>
+                                <Label Grid.Row="1" Content="Machinery" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Button>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="0" BorderThickness="1" BorderBrush="Black" Margin="2">
+                        <Button x:Name="btnTechnology" Background="White" Cursor="Hand" Click="btnTechnology_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Width="100" Height="100" Source="Images/tech.png"/>
+                                <Label Grid.Row="1" Content="Technology" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Button>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="2">
+                        <Button x:Name="btnMaintenance" Background="White" Cursor="Hand" Click="btnMaintenance_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Width="100" Height="100" Source="Images/maint.png"/>
+                                <Label Grid.Row="1" Content="Maintenance" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Button>
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="2" BorderThickness="1" BorderBrush="Black" Margin="2">
+                        <Button x:Name="btnNews" Background="White" Cursor="Hand" Click="btnNews_Click">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Image Width="100" Height="100" Source="Images/News.png"/>
+                                <Label Grid.Row="1" Content="News" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </Button>
+                    </Border>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+        <ScrollViewer x:Name="scrollProfileView" Visibility="Collapsed" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="imageProfile" Margin="10" Height="50" Width="50" Stretch="Fill" Source="Images/1488401021_profle.png"/>
+                <Grid Grid.Column="2" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding Path=FullName}"/>
+                    <TextBlock Grid.Row="1" Text="{Binding Path=Email}"/>
+                    <TextBlock Grid.Row="2" Text="{Binding Path=Phone}"/>
+                    <StackPanel Grid.Row="3" Orientation="Horizontal">
+                        <Image x:Name="imageAnimals" Height="20" Width="20" Source="{Binding AnimalsImage}" Margin="0,0,3,0"></Image>
+                        <Image x:Name="imageFacility" Height="20" Width="20" Source="{Binding FacilityImage}" Margin="0,0,3,0"></Image>
+                        <Image x:Name="imageGrain" Height="20" Width="20" Source="{Binding GrainImage}" Margin="0,0,3,0"></Image>
+                        <Image x:Name="imageLocation" Height="20" Width="20" Source="{Binding LocationImage}" Margin="0,0,3,0" ></Image>
+                        <Image x:Name="imageMachinery" Height="20" Width="20" Source="{Binding MachineryImage}" Margin="0,0,3,0"></Image>
+                        <Image x:Name="imageProject" Height="20" Width="20" Source="{Binding ProjectImage}" Margin="0,0,3,0"></Image>
+                        <Image x:Name="imageSize" Height="20" Width="20" Source="{Binding SizeImage}" ></Image>
+                    </StackPanel>
+                    <Grid.ColumnDefinitions>
+
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Records>
+	<Farmer>
+		<Contact>
+			<FirstName>GR</FirstName>
+			<LastName>Gard</LastName>
+			<ContactNo>+35840 1234 567</ContactNo>
+			<Email>grgard@maatila.com</Email>
+		</Contact>
+		<About>Organic farmer 
+		</About>
+		<Location>
+			<City>Siuntio</City>
+			<State>Uusimaa</State>
+			<Country>Finland</Country>
+		</Location>
+		<Farm Size="600">
+			<Grain Size="50">
+				<Name>Rye</Name>
+				<Strain/>
+			</Grain>
+			<Grain Size="50">
+				<Name>Bull Bean</Name>
+				<Strain/>
+			</Grain>
+			<Grain Size="450">
+				<Name>Grass</Name>
+				<Strain/>
+			</Grain>
+		</Farm>
+		<Animals>
+			<Animal Quantity="150">
+				<Species>Cattle</Species>
+				<Breed>Angus</Breed>
+			</Animal>
+		</Animals>
+		<Machinery>
+			<Equipment ManufactYear="2008">Tractor</Equipment>
+			<Brand>Brand</Brand>
+			<ModelName>Model Name</ModelName>
+			<Power/>
+		</Machinery>		
+		<Projects>
+			<Project>
+				<Name>Name</Name>
+				<Description>Description</Description>
+				<Milestones>
+					<Milestone Year="2009">Foundation</Milestone>
+					<Milestone Year="2010">Completion</Milestone>
+				</Milestones>
+			</Project>
+		</Projects>
+		<Facilities>
+			<Facility>
+				<Name>Cow House</Name>
+				<Description>Description</Description>
+			</Facility>
+		</Facilities>
+	</Farmer>
+</Records>
